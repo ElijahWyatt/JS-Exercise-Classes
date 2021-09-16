@@ -80,7 +80,19 @@ console.log('Task 1c', elijah.stomach);
 */
 
 class Car {
-  
+  constructor(model, milesPerGallon){
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+  }
+  fill(gallons){
+    this.tank = this.tank + gallons;
+  }
+  drive(distance){
+    this.odometer = this.odometer + distance;
+    (this.tank = 0 ? console.log(`I ran out of fuel at ${this.odometer} miles!`) : this.tank = this.tank - (distance / this.milesPerGallon));
+  }
 }
 
 /*
